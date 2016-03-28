@@ -1,0 +1,143 @@
+#!/bin/bash
+
+ # Color directory
+CD="$HOME/.config/termite/config"
+
+# Fetch the Colors
+BG="#1b1b1b"
+FG="#95A7CC"
+
+BLACK=$(cat ${CD} | grep -i color8 | tail -c 8)
+RED=$(cat ${CD} | grep -i color9 | tail -c 8)
+GREEN=$(cat ${CD} | grep -i color10 | tail -c 8)
+YELLOW=$(cat ${CD} | grep -i color11 | tail -c 8)
+BLUE=$(cat ${CD} | grep -i color12 | tail -c 8)
+MAGENTA=$(cat ${CD} | grep -i color13 | tail -c 8)
+CYAN=$(cat ${CD} | grep -i color14 | tail -c 8)
+WHITE=$(cat ${CD} | grep -i color15 | tail -c 8)
+
+# Fonts
+FONT1="-wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1"
+FONT2="-misc-fontawesome-medium-r-normal-*-*-*-*-*-p-*-iso10646-*"
+FONT3="tewi-9:Regular"
+FONT4=""
+FONT5=""
+FONT6=""
+
+
+# Panel
+PW=1286
+PH=31
+PX=40
+PY=12
+
+
+# Separator
+separator="%{F#1b1b1b}|%{F-}"
+
+# Functions
+
+#Workspace number
+
+ ws(){
+	test
+}
+
+# Music
+
+music() {
+state=$(mpc status | grep -oe '\[[a-z]*\]')
+song=$(mpc current)
+
+if [[ $(wc -c <<< "$song") -gt 48 ]]; then
+    song="$(cut -b 1-48 <<< "$song") ~"
+fi
+if   [[ -z $state ]]; then
+    token=""
+elif [[ $state == "[paused]" ]]; then
+    token=""
+else
+    token="";
+fi
+
+echo "$token $song"
+}
+
+# Network Monitor
+
+ net(){
+	wifi=$(cat /sys/class/net/wlp*/operstate)
+ethn=$(cat /sys/class/net/enp*/operstate)
+min=$(iwconfig 2>&1 | grep 'Link' | awk '{gsub(/[=/]/," "); print $3}')
+max=$(iwconfig 2>&1 | grep 'Link' | awk '{gsub(/[=/]/," "); print $4}')
+
+if [[ "$wifi" == "up" ]]; then
+    percentage=$(bc <<< "$min * 100 / $max")
+    case $percentage in
+        [1-9] ) token="" ;;
+        [1-3]*) token="" ;;
+        [4-5]*) token="" ;;
+        [6-7]*) token="" ;;
+        *)      token="" ;;
+    esac
+elif [[ "$ethn" == "up" ]]; then
+    token=""
+else
+    token=""
+fi
+
+echo "$token"
+}
+
+# Clock
+
+ clock(){
+  tr '[:lower:]' '[:upper:]' <<< $(date "+%I:%M %p")
+}
+
+# Volume Monitor
+
+ vol(){
+
+volume=$(amixer sget Master | sed -n "0,/.*\[\([0-9]\+\)%\].*/s//\1/p")
+state=$(amixer sget Master | grep -Eoe '\[(on|off)\]')
+
+if   [[ $volume -eq 0 || $state == '[off]' ]]; then
+    token=''
+elif [[ $volume -gt 50 ]]; then
+    token=''
+else
+    token=''
+fi
+
+echo "$token $volume%"
+}
+
+# Power Monitor
+
+pow(){
+
+percentage=$(acpi --battery | awk '{gsub(/,/, "");} {print $4}' | sed 's/.$//')
+
+case $percentage in
+    [0-9])      token='' ;;
+    [1-2][0-9]) token='' ;;
+    [3-4][0-9]) token='' ;;
+    [5-6][0-9]) token='' ;;
+    [7-8][0-9]) token='' ;;
+    9[0-9]|100) token='' ;;
+esac
+if [[ $(acpi -a | grep on) ]]; then
+    token=''
+fi
+
+echo "$token $percentage%"
+}
+
+# Clean it up, use defined variables, position widgets
+
+while :; do
+    echo "%{l}$(ws)%{c}$(clock)%{r}$(net) $separator $(pow) $separator $(vol) $separator  $(music) $separator"
+	 sleep .5
+done | lemonbar -g ${PW}x${PH}+${PX}+${PY} -f "$FONT1" -f "$FONT2" -f "$FONT3" -f "$FONT4" -f "$FONT5" -B "$BG" -F "$FG" -p -d -o -1  | \
+    while :; do read line; eval $line; done &

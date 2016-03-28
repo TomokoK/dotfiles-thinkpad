@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# i3
+#conky -c /home/asuka/.config/panel/empty_conky &
+#/home/asuka/.config/panel/bar_config
+
+# BSPWM
+bspc monitor LVDS1 -d 1 2 3 4 5 6 &
+
+/home/asuka/.config/lemonbar/bar_config

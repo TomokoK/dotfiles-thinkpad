@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+$(xrandr | grep -q 'VGA1 disconnected') && laptopmon

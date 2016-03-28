@@ -1,0 +1,81 @@
+[options]
+scroll_on_output = false
+scroll_on_keystroke = true
+audible_bell = false
+mouse_autohide = false
+allow_bold = false
+dynamic_title = true
+urgent_on_bell = true
+clickable_url = true
+#font = Fantasque Sans Mono Regular 10
+font = tewi Regular 9
+#font = JackeyFont Regular 12
+scrollback_lines = 10000
+search_wrap = true
+#icon_name = terminal
+#geometry = 640x480
+
+# "system", "on" or "off"
+cursor_blink = on
+
+# "block", "underline" or "ibeam"
+cursor_shape = block
+
+# $BROWSER is used by default if set, with xdg-open as a fallback
+browser = firefox
+
+# set size hints for the window
+#size_hints = false
+
+# emit escape sequences for other keys modified by Control
+#modify_other_keys = false
+
+# 20% background transparency (requires a compositor)
+#background = rgba(21, 21, 21, 0.9)
+
+[colors]
+cursor = #999999
+foreground = #FFFFFF
+foreground_bold = #CFCFCF
+background = #1b1b1b
+
+# if unset, will reverse foreground and background
+highlight = #2f2f2f
+
+#black
+color0 = #3D3D3D
+color8 = #4D4D4D
+#red
+color1 = #6673BF
+color9 = #899AFF
+#green
+color2 = #3EA290
+color10 = #52AD91
+#yellow
+color3 = #B0EAD9
+color11 = #98C9BB
+#blue
+color4 = #31658C
+color12 = #477AB3
+#magenta
+color5 = #596196
+color13 = #7882BF
+#cyan
+color6 = #8292B2
+color14 = #95A7CC
+#white
+color7 = #C8CACC
+color15 = #EDEFF2
+
+[hints]
+#font = Consolas-Regular 9
+#foreground = #dcdccc
+#background = #3f3f3f
+#active_foreground = #e68080
+#active_background = #3f3f3f
+#padding = 2
+#border = #3f3f3f
+#border_width = 0.5
+#roundness = 2.0
+
+# vim: ft=dosini cms=#%s
