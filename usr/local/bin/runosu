@@ -1,5 +1,0 @@
-#!/bin/bash
-
-cd /home/asuka/osu
-
-WINEPREFIX=$HOME/.wineosu wine osu\!.exe

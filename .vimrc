@@ -1,1 +1,0 @@
-.vimconf/.vimrc
