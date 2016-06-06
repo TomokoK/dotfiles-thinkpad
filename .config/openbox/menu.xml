@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openbox_menu xmlns="http://openbox.org/3.4/menu">
+
+<menu id="system-menu" label="System">
+  <item label="Openbox Configuration Manager">
+    <action name="Execute">
+      <command>obconf</command>
+      <startupnotify><enabled>yes</enabled></startupnotify>
+    </action>
+  </item>
+  <item label="lxappearance">
+    <action name="Execute">
+      <command>lxappearance</command>
+      <startupnotify><enabled>yes</enabled></startupnotify>
+    </action>
+  </item>
+  <item label="Pavucontrol">
+    <action name="Execute">
+      <command>pavucontrol</command>
+      <startupnotify><enabled>yes</enabled></startupnotify>
+    </action>
+  </item>
+  <item label="Tint2 Configuration">
+    <action name="Execute">
+      <command>tint2conf</command>
+      <startupnotify><enabled>yes</enabled></startupnotify>
+    </action>
+  </item>
+  <separator />
+  <item label="Reconfigure Openbox">
+    <action name="Reconfigure" />
+  </item>
+</menu>
+
+<menu id="root-menu" label="Openbox 3">
+  <separator label="Applications" />
+  <item label="URxvt">
+     <action name="Execute">
+       <command>urxvt</command>
+     </action>
+  </item>
+  <item label="Firefox">
+     <action name="Execute">
+       <command>firefox</command>
+     </action>
+  </item>
+  <item label="PlayOnLinux">
+     <action name="Execute">
+       <command>playonlinux</command>
+     </action>
+  </item>
+  <item label="Thunar">
+     <action name="Execute">
+       <command>thunar</command>
+     </action>
+  </item>
+  <item label="Libre Office">
+     <action name="Execute">
+       <command>libreoffice</command>
+     </action>
+  </item>
+  <separator label="System" />
+  <menu id="system-menu"/>
+  <separator />
+  <item label="Log Out">
+    <action name="Exit">
+      <prompt>yes</prompt>
+    </action>
+  </item>
+</menu>
+
+</openbox_menu>

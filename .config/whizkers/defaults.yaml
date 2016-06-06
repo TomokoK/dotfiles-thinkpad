@@ -1,0 +1,141 @@
+# Fonts
+font: "Tewi"
+term_fonts:
+  - "Tewi"
+  - "JackeyFont"
+pixelsize: 9
+use_bold: false
+
+# Colors
+
+colors:
+  primary:      "green"
+  secondary:    "blue"
+  tertiary:     "yellow"
+  background:   "#353945"
+  foreground:   "#becde7"
+  cursor:       "#d6e0e8"
+  black:
+    normal:     "#7e8798"
+    bold:       "#7e8798"
+  red:
+    normal:     "#ff7854"
+    bold:       "#ff7854"
+  green:
+    normal:     "#36eb8c"
+    bold:       "#36eb8c"
+  yellow:
+    normal:     "#c2f139"
+    bold:       "#c2f139"
+  blue:
+    normal:     "#4591e7"
+    bold:       "#4591e7"
+  magenta:
+    normal:     "#e33a86"
+    bold:       "#e33a86"
+  cyan:
+    normal:     "#63decd"
+    bold:       "#63decd"
+  white:
+    normal:     "#becde7"
+    bold:       "#becde7"
+
+# Utility
+
+colornumbers:
+  black:    0
+  red:      1
+  green:    2
+  yellow:   3
+  blue:     4
+  magenta:  5
+  cyan:     6
+  white:    7
+
+# Convenience
+
+bgc:        "{` {{ colors }}['background'] `}"
+fgc:        "{` {{ colors }}['foreground'] `}"
+csc:        "{` {{ colors }}['cursor'] `}"
+
+n_black:    "{` {{ colors }}['black']['normal'] `}"
+b_black:    "{` {{ colors }}['black']['bold'] `}"
+n_red:      "{` {{ colors }}['red']['normal'] `}"
+b_red:      "{` {{ colors }}['red']['bold'] `}"
+n_green:    "{` {{ colors }}['green']['normal'] `}"
+b_green:    "{` {{ colors }}['green']['bold'] `}"
+n_yellow:   "{` {{ colors }}['yellow']['normal'] `}"
+b_yellow:   "{` {{ colors }}['yellow']['bold'] `}"
+n_blue:     "{` {{ colors }}['blue']['normal'] `}"
+b_blue:     "{` {{ colors }}['blue']['bold'] `}"
+n_magenta:  "{` {{ colors }}['magenta']['normal'] `}"
+b_magenta:  "{` {{ colors }}['magenta']['bold'] `}"
+n_cyan:     "{` {{ colors }}['cyan']['normal'] `}"
+b_cyan:     "{` {{ colors }}['cyan']['bold'] `}"
+n_white:    "{` {{ colors }}['white']['normal'] `}"
+b_white:    "{` {{ colors }}['white']['bold'] `}"
+
+# Firefox Variables
+
+tabact: "#eeeeee"
+tabactback: "#000000"
+tabhovback: "#2e2e2e"
+
+urlfg: "#eeeeee"
+urlbg: "{` {{ colors }}['background'] `}"
+urlsizeht: "36"
+
+# Startpage
+
+startpage: "{` {{ colors }}['background'] `}"
+starthighlights: "#36eb8c"
+
+# Tint2 Variables
+
+barevent:         "#161616"
+
+barbg:            "#4a4b4d"
+baropaq:          "100"
+barbord:          "{{ barevent }}"
+barbordopaq:      "0"
+barhov:           "{{ barevent }}"
+barhovopaq:       "100"
+barhovbord:       "{{ barevent }}"
+barhovbordopaq:   "0"
+barpress:         "{{ barevent }}"
+barpressopaq:     "100"
+barpressbord:     "{{ barevent }}"
+barpressbordopaq: "0"
+barfont:          "SFNS Display Bold"
+barpixelsize:     "10"
+
+# ncmpcpp
+
+text_primary:         "{` {{ colors }}['primary'] `}"
+text_secondary:       "{` {{ colors }}['secondary'] `}"
+text_tertiary:        "{` {{ colors }}['tertiary'] `}"
+ncmpcpp_primary_n:    "{` {{ colornumbers }}[{{ colors }}['primary']] + 1 `}"
+ncmpcpp_secondary_n:  "{` {{ colornumbers }}[{{ colors }}['secondary']] + 1 `}"
+ncmpcpp_tertiary_n:   "{` {{ colornumbers }}[{{ colors }}['tertiary']] + 1 `}"
+
+# openbox
+
+
+title_btn_clr:   "#959BA4"
+title_bg:        "#1C1D20"
+menu_bg:         "#EEEEEE"
+menu_txt_clr:    "#021B21"
+
+# dmenu
+
+dmenu_bg:   "#4A4B4D"
+dmenu_fg:   "#ffffff"
+
+# dunst
+
+dunst_frame:   "#36eb8c"
+dunst_font:    "{` {{ term_fonts }}[0] `}"
+
+# wallpaper
+
+wallpaper: /home/asuka/Pictures/Walls/12.png
