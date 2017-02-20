@@ -1,12 +1,13 @@
 #!/bin/usr
 #
-# Tomoko's .xinitrc file
+#Tomoko's .xinitrc
 
 xsetroot -cursor_name left_ptr &
+xset +fp /home/asuka/.fonts
+xset fp rehash
+#Start programs here
+mpd
 
-# Start stuff here
-mpd  & transmission-daemon &
 
-# Start Openbox
-
+#Start WM
 exec openbox-session
