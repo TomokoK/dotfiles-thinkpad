@@ -120,11 +120,10 @@
 
        use obconf if you want to change these without having to log out
        and back in -->
-    <number>4</number>
+    <number>3</number>
     <firstdesk>1</firstdesk>
     <names>
       <name>トモカーズ</name>
-      <name>Torrents</name>
       <name>Games</name>
       <name>Misc.</name>
     </names>
@@ -297,7 +296,7 @@
     <!-- Keybindings for running applications -->
     <keybind key="W-r">
       <action name="Execute">
-          <execute>/home/asuka/.config/OBdmenu</execute>
+        <execute>/home/asuka/.config/OBdmenu</execute>
       </action>
     </keybind>
     <!-- Misc. Keybindings -->

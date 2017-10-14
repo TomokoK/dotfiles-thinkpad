@@ -1,2 +1,0 @@
-#!/bin/sh
-exec  dmenu_run -q -i -h 30 -w 1920 -y 0 -x 0 -fn "SFNS-10:style=Bold" -nb "#4A4B4D" -nf "#ffffff" -sb "#4A4B4D" -sf "#ffffff" -p "~"

@@ -15,10 +15,9 @@
 # If you want to use XFCE config tools...
 #
 #xfce-mcs-manager &
-vgamoncheck &
 compton --config /home/asuka/.config/compton.conf &
 dunst &
-feh --bg-scale /home/asuka/Pictures/Walls/12.png &
+feh --bg-scale /home/asuka/.wallpapers/lain.png &
+xrdb -merge ~/.Xresources &
 mpdscribble &
-tint2 &
-xrdb -merge ~/.Xresources
+/home/asuka/.config/polybar/launch.sh

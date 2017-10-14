@@ -12,46 +12,46 @@ URxvt.matcher.button:   1
 URxvt.url-launcher:     /usr/bin/firefox
 
 !! FONT
-urxvt*font: xft:Tewi:pixelsize=9,xft:JackeyFont:pixelsize=9,
+urxvt*font: xft:Tewi:pixelsize=9,xft:JackeyFont:pixelsize=9,-wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1,
 
-urxvt*boldFont: xft:Tewi:pixelsize=9,xft:JackeyFont:pixelsize=9,
+urxvt*boldFont: xft:Tewi:pixelsize=9,xft:JackeyFont:pixelsize=9,-wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1,
 
 !! COLORS
 
 ! special
-*.foreground: #becde7
-*.background: #353945
-*.cursorColor: #d6e0e8
-*.borderColor: #353945
+*.foreground: #DDCCBB
+*.background: #151515
+*.cursorColor: #999999
+*.borderColor: #151515
 
 ! black
-*.color0: #9ca7a8
-*.color8: #cad8da
+*.color0: #666666
+*.color8: #999999
 
 ! red
-*.color1: #c3c5c3
-*.color9: #f4f7f4
+*.color1: #C27B83
+*.color9: #D47C87
 
 ! green
-*.color2: #b2bcbe
-*.color10: #e0edf0
+*.color2: #99CC66
+*.color10: #CCFF99
 
 ! yellow
-*.color3: #a4b1b6
-*.color11: #d1e1e8
+*.color3: #CC9966
+*.color11: #FFCC99
 
 ! blue
-*.color4: #809aaa
-*.color12: #a5c7dc
+*.color4: #6699CC
+*.color12: #99CCFF
 
 ! magenta
-*.color5: #8da2ab
-*.color13: #b6d1dd
+*.color5: #9966CC
+*.color13: #CC99FF
 
 ! cyan
-*.color6: #7293aa
-*.color14: #93bedc
+*.color6: #BA3D4D
+*.color14: #BA3D4D
 
 ! white
-*.color7: #648baa
-*.color15: #81b3dc
+*.color7: #CCCCCC
+*.color15: #FFFFFF
