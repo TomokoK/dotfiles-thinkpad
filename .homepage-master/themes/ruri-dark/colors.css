@@ -4,16 +4,16 @@
     as published by Sam Hocevar. See the COPYING file for more details. */
 
 body {
-    background: #353945 !important;
+    background: #151515 !important;
 }
 
 .name-highlight {
-    color: #36eb8c !important;
+    color: #BA3D4D !important;
 }
 
 main {
     background-color: #2B2B2B;
-    border-color: #36eb8c !important;
+    border-color: #BA3D4D !important;
 }
 
 h1 {
@@ -43,20 +43,6 @@ h1 {
 .searchBar:focus::-moz-placeholder          { color: rgba(100,100,100,1); opacity: 1; } /* Fx 19+ */
 .searchBar:focus:-ms-input-placeholder      { color: rgba(100,100,100,1); } /* IE 10+ */
 /* Specyfing opacity for Fx is only resetting the defaults. Alpha from rgba will still work. */
-
-.searchBar:focus {
-    color: rgba(100,100,100,1);
-}
-
-.search_google {
-    background-image: url('images/icons/google.png');
-}
-.search_youtube {
-    background-image: url('images/icons/youtube.png');
-}
-.search_wikipedia {
-    background-image: url('images/icons/wikipedia.jpg');
-}
 
 /* Grey button */
 .button_grey > a,
@@ -122,7 +108,7 @@ h1 {
     text-shadow: 0 0.5px #FFFFFF;
 }
 .column > ul > li > a {
-    color: #36eb8c !important;
+    color: #BA3D4D !important;
 }
 
 /* purple column highlight */
