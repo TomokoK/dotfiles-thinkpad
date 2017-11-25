@@ -17,7 +17,7 @@
 #xfce-mcs-manager &
 compton --config /home/asuka/.config/compton.conf &
 dunst &
-feh --bg-scale /home/asuka/.wallpapers/lain.png &
+feh --bg-scale /home/asuka/.wallpapers/lain3.jpg &
 xrdb -merge ~/.Xresources &
 mpdscribble &
 /home/asuka/.config/polybar/launch.sh

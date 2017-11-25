@@ -13,7 +13,7 @@ background = #151515
 background-alt = #444
 ;foreground = ${xrdb:color7:#222}
 foreground = #DDCCBB
-foreground-alt = #555
+foreground-alt = #DDCCBB
 primary = #BA3D4D
 secondary = #99cc66
 alert = #ba3d4d
@@ -44,11 +44,11 @@ padding-right = 3
 module-margin-left = 2
 module-margin-right = 2
 
-font-0 = Tewi:pixelsize=9:antialias=false;1
-font-1 = JackeyFont:size=9:antialias=false;1
-font-2 = siji:pixelsize=10;1
+font-0 = lucy tewi:pixelsize=9:antialias=false;1
+font-1 = FreeType JackeyFont:size=9:antialias=false;1
+font-2 = Wuncon Siji:pixelsize=10;1
 
-modules-left = mpd filesystem battery
+modules-left = mpd volume filesystem battery
 modules-center = 
 modules-right = date powermenu
 
@@ -271,11 +271,11 @@ format-muted-foreground = ${colors.foreground-alt}
 label-muted = sound muted
 
 bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
+bar-volume-foreground-0 = ${colors.primary}
+bar-volume-foreground-1 = ${colors.primary}
+bar-volume-foreground-2 = ${colors.primary}
+bar-volume-foreground-3 = ${colors.primary}
+bar-volume-foreground-4 = ${colors.primary}
 bar-volume-foreground-5 = #f5a70a
 bar-volume-foreground-6 = #ff5555
 bar-volume-gradient = false
@@ -356,11 +356,11 @@ label-separator = |
 label-separator-foreground = ${colors.foreground-alt}
 
 menu-0-0 = reboot
-menu-0-0-exec = gksudo reboot
+menu-0-0-exec = reboot
 menu-0-1 = power off
-menu-0-1-exec = gksudo poweroff
+menu-0-1-exec = poweroff
 menu-0-2 = sleep
-menu-0-2-exec = gksudo /usr/bin/zzz
+menu-0-2-exec = systemctl suspend
 
 [settings]
 screenchange-reload = true

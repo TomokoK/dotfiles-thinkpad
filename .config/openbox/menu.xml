@@ -41,28 +41,23 @@
   </item>
   <item label="Eclipse">
      <action name="Execute">
-       <command>/home/asuka/eclipse/java-neon/eclipse/eclipse</command>
+       <command>eclipse</command>
      </action>
   </item>
   <item label="PyCharm">
   	<action name="Execute">
-		<command>pycharm-community</command>
+		<command>pycharm.sh</command>
 	</action>
-  </item>
-  <item label="Visual Studio Code">
-     <action name="Execute">
-	     <command>/home/asuka/.vs-code/VSCode-linux-x64/code --disable-gpu</command>
-     </action>
-  </item>
-  <item label="Android Studio">
-	  <action name="Execute">
-		  <command>android-studio</command>
-	  </action>
   </item>
   <item label="Libre Office">
      <action name="Execute">
        <command>libreoffice</command>
      </action>
+  </item>
+  <item label="Steam">
+	  <action name="Execute">
+		  <command>steam</command>
+	</action>
   </item>
   <separator label="System" />
   <menu id="system-menu"/>

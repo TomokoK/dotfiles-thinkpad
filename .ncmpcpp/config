@@ -43,6 +43,7 @@ display_volume_level                  = "yes"
 clock_display_seconds                 = "yes"
 mouse_support                         = "no"
 discard_colors_if_item_is_selected    = "yes"
+execute_on_song_change		      = "/home/asuka/.bin/mpdnotify"
 
 ############################################################
 #                      Formatting                          #
