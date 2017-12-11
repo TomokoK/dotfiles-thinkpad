@@ -42,8 +42,10 @@
                   'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>theme</name>
-    <titleLayout>IC</titleLayout>
+    <name>rounded</name>
+    <cornerRadius>4</cornerRadius>
+    <cornerRadius menu="yes">4</cornerRadius>
+    <titleLayout>C</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
       N: window icon
@@ -120,11 +122,12 @@
 
        use obconf if you want to change these without having to log out
        and back in -->
-    <number>3</number>
+    <number>4</number>
     <firstdesk>1</firstdesk>
     <names>
       <name>トモカーズ</name>
       <name>Games</name>
+      <name>Misc.</name>
       <name>Misc.</name>
     </names>
     <popupTime>875</popupTime>
@@ -293,6 +296,12 @@
         </finalactions>
       </action>
     </keybind>
+    <!-- Keybindings for running applications -->
+    <keybind key="W-r">
+      <action name="Execute">
+        <execute>/home/asuka/.config/OBdmenu</execute>
+      </action>
+    </keybind>
     <!-- Misc. Keybindings -->
     <keybind key="W-Return">
       <action name="Execute">
@@ -320,9 +329,9 @@
       </action>
     </keybind>
     <keybind key="XF86MonBrightnessDown">
-	<action name="Execute">
-	    <execute>xbacklight -dec 10</execute>
-	</action>
+      <action name="Execute">
+        <execute>xbacklight -dec 10</execute>
+      </action>
     </keybind>
     <keybind key="XF86AudioNext">
       <action name="Execute">

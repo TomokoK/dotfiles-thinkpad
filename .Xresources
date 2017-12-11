@@ -25,33 +25,49 @@ urxvt*boldFont: xft:lucy tewi:pixelsize=9,xft:Freetype JackeyFont:pixelsize=9,-w
 *.borderColor: #151515
 
 ! black
-*.color0: #666666
-*.color8: #999999
+!*.color0: #666666
+!*.color8: #999999
+*.color0: #353540
+*.color8: #545466
 
 ! red
-*.color1: #C27B83
-*.color9: #D47C87
+!*.color1: #C27B83
+!*.color9: #D47C87
+*.color1: #8c5760
+*.color9: #b26f7a
 
 ! green
-*.color2: #99CC66
-*.color10: #CCFF99
+!*.color2: #99CC66
+!*.color10: #CCFF99
+*.color2: #7b8c58
+*.color10: #9db270
 
 ! yellow
-*.color3: #CC9966
-*.color11: #FFCC99
+!*.color3: #CC9966
+!*.color11: #FFCC99
+*.color3: #8c6e43
+*.color11: #b28c55
 
 ! blue
-*.color4: #6699CC
-*.color12: #99CCFF
+!*.color4: #6699CC
+!*.color12: #99CCFF
+*.color4: #58698c
+*.color12: #7086b2
 
 ! magenta
-*.color5: #9966CC
-*.color13: #CC99FF
+!*.color5: #9966CC
+!*.color13: #CC99FF
+*.color5: #7b5e7d
+*.color13: #9c77b2
 
 ! cyan
-*.color6: #BA3D4D
-*.color14: #BA3D4D
+!*.color6: #BA3D4D
+!*.color14: #BA3D4D
+*.color6: #66808c
+*.color14: #82a2b2
 
 ! white
-*.color7: #CCCCCC
-*.color15: #FFFFFF
+!*.color7: #CCCCCC
+!*.color15: #FFFFFF
+*.color7: #8c8b8b
+*.color15: #b8b8c8

@@ -8,12 +8,12 @@ body {
 }
 
 .name-highlight {
-    color: #BA3D4D !important;
+    color: #58698c !important;
 }
 
 main {
     background-color: #2B2B2B;
-    border-color: #BA3D4D !important;
+    border-color: #58698c !important;
 }
 
 h1 {
@@ -108,7 +108,7 @@ h1 {
     text-shadow: 0 0.5px #FFFFFF;
 }
 .column > ul > li > a {
-    color: #BA3D4D !important;
+    color: #66808c !important;
 }
 
 /* purple column highlight */
