@@ -14,9 +14,10 @@ background-alt = #444
 ;foreground = ${xrdb:color7:#222}
 foreground = #DDCCBB
 foreground-alt = #DDCCBB
-primary = #BA3D4D
-secondary = #99cc66
+primary = #6699CC
+secondary = #FFCC99
 alert = #ba3d4d
+title = #58698c
 
 [bar/example]
 ;monitor = ${env:MONITOR:HDMI-1}
@@ -33,9 +34,9 @@ foreground = ${colors.foreground}
 line-size = 0
 line-color = #f00
 
-border-size = 4
-border-left-size = 5
-border-right-size = 5
+border-size = 0
+border-left-size = 0
+border-right-size = 0
 border-color = #00000000
 
 padding-left = 3
@@ -48,9 +49,9 @@ font-0 = lucy tewi:pixelsize=9:antialias=false;1
 font-1 = FreeType JackeyFont:size=9:antialias=false;1
 font-2 = Wuncon Siji:pixelsize=10;1
 
-modules-left = mpd volume filesystem battery
+modules-left = mpd weather
 modules-center = 
-modules-right = date powermenu
+modules-right = battery date 
 
 tray-position = 
 tray-padding = 
@@ -166,6 +167,8 @@ icon-next = 
 
 label-song-maxlen = 35
 label-song-ellipsis = true
+
+format-underline = ${colors.title}
 
 [module/xbacklight]
 type = internal/xbacklight
@@ -362,6 +365,32 @@ menu-0-1-exec = poweroff
 menu-0-2 = sleep
 menu-0-2-exec = systemctl suspend
 
+[module/weather]
+type = custom/script
+interval = 10
+format = <label>
+format-prefix-foreground = ${colors.foreground-alt}
+exec = ~/.config/polybar/weather
+
+[module/ewmh]
+type = internal/xworkspaces
+
+; Only show workspaces defined on the same output as the bar
+;
+; Useful if you want to show monitor specific workspaces
+; on different bars
+;
+; Default: false
+pin-workspaces = true
+
+; Create click handler used to focus desktop
+; Default: true
+enable-click = false
+
+; Create scroll handlers used to cycle desktops
+; Default: true
+enable-scroll = false
+
 [settings]
 screenchange-reload = true
 ;compositing-background = xor
@@ -370,7 +399,7 @@ screenchange-reload = true
 ;compositing-border = over
 
 [global/wm]
-margin-top = 5
-margin-bottom = 5
+margin-top = 0
+margin-bottom = 0
 
 ; vim:ft=dosini

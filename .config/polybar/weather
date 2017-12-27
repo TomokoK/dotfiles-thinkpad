@@ -4,8 +4,8 @@
 import requests
 import datetime
 
-CITY = "xxxxxxx" #england is my city
-API_KEY = "xxxxxxxxxxxxx"
+CITY = "[redacted]" #england is my city
+API_KEY = "[redacted]"
 UNITS = "Metric"
 UNIT_KEY = "C"
 
