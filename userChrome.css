@@ -1,160 +1,148 @@
-/* Tomoko_A_Best @ Rizon */
+@import url('file:///home/matheus/.cache/homepage/colors.css');
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-@namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
+:root {
+/*********************************/
+/**** TAB BAR VARIABLES ****/
+/*********************************/
+    --bg-dark: #151515;
+    --bg-light: #1C1D20 ; 
+    --fg-dark: #DDCCBB;
+    --fg-light: #DDCCBB; 
+    --tab-fonts: "Noto Sans"; 
+    --tab-font-size: 9pt;
+    --tab-text-align: center;
+    --tab-min-height: 25px !important;
 
-:root
-{   /* Define the root variables, these are used to easily modify the CSS. */
-    /* Browser */
-    --scrollbar: -14px !important;     /* Defining 0px will show the scrollbar
-                                          -14px usually works to hide it, You may have
-                                          to manually adjust it to your liking. */
-    /* Fonts */
-    --font-family:  !important;        /* Default is 'sans-serif' */
-    --font-weight:  !important;        /* Default is 'normal' */
-    --font-size:9pt !important;        /* Default is '14px' */
- 
-    /* Tabs */
-    --tab-size-height:0px !important;  /* This will be added to a minimal size.
-                                          You cannot make the current tabs any smaller. */
-    --tab-size-max: 100% !important;   /* The maximum width a new tab should have.
-                                          Generally leaving this at 100% is highly recommended.
-                                          It will fill the remaining space this way. */
-    --tab-size-min: 10px !important;   /* The minimal width a new tab should have. */
-    --tab-offset: -15px !important;    /* The offset required to keep the tabs a full-width
-                                          This is different for everyone, modify to liking. */
-    --tab-align: center !important;    /* The alignment of the text in the tabs. */
-    --tab-favicon:hidden !important;   /* Show or hide the favicons on the tabs */
-    --tab-fg-normal:#DDCCBB !important;
-    --tab-bg-normal:#151515 !important;
-    --tab-fg-active:#DDCCBB !important;
-    --tab-bg-active:#1C1D20 !important;
-    --tab-fg-hover: #DDCCBB !important;
-    --tab-bg-hover: #151515 !important;
-    
-    /* URL */
-    --url-fg: #DDCCBB !important;
-    --url-bg: #151515 !important;
-    --url-align:left !important;        /* The alignment of the text in the url. */
-    --url-size-height: 36px!important;  /* Be sure to change this as this will automatically handle
-                                           the height issues you might have concerning the content. */
-                                           
-    --toolbarbutton-hover-background: none !important;
-    --toolbarbutton-hover-bordercolor: none !important;
-    --toolbarbutton-hover-boxshadow: none !important;
- 
-    /* TODO:
-       * Dropdown.
-       * Statuschange. */
+/*********************************/
+/**** URL BAR VARIABLES ****/
+/*********************************/
+    --url-background: var(--bg-dark); 
+    --url-foreground: var(--fg-light);
+    --url-font-size: 9pt;
+    --url-text-align: left;
 }
 
 
-
-/* Hide all this bullshit */
-.toolbarbutton-menubutton-dropmarker,.tabs-newtab-button,#abp-toolbarbutton,
-#addonbar-closebutton,#appmenu-toolbar-button,#back-button,#bookmarks-menu-button,
-#downloads-button,#forward-button,#go-button,#home-button,#identity-box,
-#identity-icon-labels,#minimize-button,#notification-popup-box,#page-proxy-favicon,
-#PanelUI-button,#restore-button,#searchbar,#star-button,#stylish-toolbar-button,
-#tabbrowser-tabs .scrollbutton-down,#tabbrowser-tabs .scrollbutton-up,
-#urlbar-container dropmarker,#urlbar-go-button,#urlbar-reload-button,
-#urlbar-stop-button,statusbarpanel
-{ display: none !important; }
-
-/* Active pointers on the side of an active tab. */
-.tab-background-start,
-.tab-background-end
-{ visibility: hidden !important; }
-
-
-
-/* Some ugly gradiets we don't want to see. */
-.tabbrowser-tab:before,.tabbrowser-tab:after, .tab-background-middle,.tab-background
-{ box-shadow: none !important; background: none !important; }
-
-/* Remove the scrollbar vertical scrollbar on websites. */
-#content browser
-{ margin-right: var(--scrollbar)!important; overflow-y:scroll; overflow-x:hidden; }
-
-/* The height of tabs */
-#TabsToolbar .tabbrowser-tabs {
-    min-height: calc(0px + var(--tab-height)) !important;
-    text-align: center !important;
-    margin: 0px -15px !important; }
-    .tabbrowser-tab:before,.tabbrowser-tab:after { display: none !important; }
-
-
-/* The min-max width of tabs. */
-#main-window #tabbrowser-tabs tab[fadein]:not([pinned])
-{ min-width: var(--tab-size-min);
-  max-width: var(--tab-size-max); }
-
-/* Specify the font and the alignment. */
-tab
-{ font-family: var(--font-family);
-  font-size:   var(--font-size);
-  text-align:  center !important; }
-
-/* Hide or show the favicon on the tab. */
-.tabbrowser-tab:not([pinned]) .tab-throbber,
-.tabbrowser-tab .tab-close-button,
-.tabbrowser-tab:not([pinned]) .tab-icon-image
-{ visibility: var(--tab-favicon); }
-
-/* Tab:Standard */
-#main-window .tabbrowser-tab:not(:-moz-lwtheme)  
-{ background-color: var(--tab-bg-normal); color: var(--tab-fg-normal); }
-
-/* Tab:Hover */
-#main-window .tabbrowser-tab:hover
-{ background-color: var(--tab-bg-hover);  color: var(--tab-fg-hover);  }
-
-/* Tab:Active */
-#main-window .tabbrowser-tab[selected]
-{ background-color: var(--tab-bg-active); color: var(--tab-fg-active); }
-
-/* The actual bar, this doesn't talk to the text within. */
-#nav-bar
-{ background: var(--url-bg) !important; height: var(--url-size-height) !important;
-  box-shadow: none !important; position: fixed !important; width: 100% !important; }
-
-/* The text within the url bar. */
-#urlbar
-{ height: calc(var(--url-size-height) * 2px) !important;
-  font-family: var(--font-family) !important;
-  font-size: var(--font-size) !important;
-  text-align: var(--url-align);
-  color: var(--url-fg);
-  margin: 8px 0px 0px 13px !important; width: 100vw !important;
-  background: none !important;border: none !important; }
-
-/* Ensure you the fixed positioning of the nav/urlbar doesn't
-   Sizen down the actual viewable content. */
-#content-deck
-{ margin-top: calc(var(--url-size-height) - 3px) !important; }
-
-#PopupAutoCompleteRichResult
-{ margin-top: 11.5px !important; }
-#PopupAutoCompleteRichResult richlistitem,
-#PopupAutoCompleteRichResult richlistitem *
-{ font-size: var(--font-size);background: var(--url-bg);color: var(--url-fg);
-  border: none !important;height: 20px !important;
-  margin: 0px 0px 0px 0px!important; padding:1px 0px 1px 2px!important;}
-
-#PopupAutoCompleteRichResult richlistitem[selected="true"] *
-{ color:var(--tab-fg-hover); }
-
-#PopupAutoCompleteRichResult richlistitem .ac-site-icon
-{ visibility: hidden!important; }
-
-/*styling*/
-#searchbar > .searchbar-textbox, #nav-bar {
-    background: #151515 !important;
-    border: 0px #151515 !important;
+/*********************************/
+/**** MENU BAR CONFIG ****/
+/*********************************/
+#navigator-toolbox, #main-window[sizemode="normal"] #navigator-toolbox, #main-window[sizemode="maximized"] #navigator-toolbox {
+    border-top: 0px !important;
+    border-left: 0px !important;
+    border-right: 0px !important;
+    border-bottom: 0px !important;
     box-shadow: none !important;
 }
 
-/* URL/Navbar things we don't want to exist */
 
-#nav-bar  #back-button > .toolbarbutton-icon, #forward-button, #PanelUI-button .button-icon, #PanelUI-button .button-text, #identity-box, #dropmarker-icon, #historydropmarker, #autocomplete-history-dropmarker, #urlbar-history-dropmarker, #dropmarker, #autocomplete-history-dropmarker, #urlbar-history-dropmarker, #reload-button, .autocomplete-history-dropmarker.urlbar-history-dropmarker, #plugins-notification-icon, #notification-anchor-icon, #notification-popup-box, .scrollbutton-up, .scrollbutton-down, #alltabs-button,.tabs-newtab-button, #browser-border-end, #browser-border-start, #go-button, #urlbar-go-button {
+/*********************************/
+/**** TAB BAR CONFIG ****/
+/*********************************/
+tab, .tabbrowser-tabs *|tab {
+    background: var(--bg-dark) !important; 
+    color: var(--fg-light) !important;
+    font-family: var(--tab-fonts) !important;
+    font-size: var(--tab-font-size); 
+    text-shadow: none !important; 
+    text-align: var(--tab-text-align) !important;
+}
+
+/**** TAB LABEL (DEFAULT=CENTER) ****/
+.tab-label {
+    -moz-box-flex: 1 !important; 
+    text-align: var(--tab-text-align) !important;
+}
+
+/**** TAB WIDTH ****/
+.tabbrowser-tab[fadein]:not([pinned]) { 
+    min-width: 10px !important; 
+    max-width:  100% !important; 
+}
+
+/**** TAB SELECTED (DEFAULT=BG-LIGHT) ****/
+.tab-background-middle[selected="true"], .tabbrowser-tab[selected="true"], .tab-background-middle[selected="true"]:hover, .tabbrowser-tab[selected="true"]:hover {
+    background: var(--bg-light) !important;
+    color: var(--fg-light) !important;
+}
+
+/**** TAB HOVER (DEFAULT=BG-LIGHT) ****/
+.tabbrowser-tab[selected="true"][pinned="true"]:hover, .tabbrowser-tab:not([pinned]):hover, .tabs-newtab-button:hover {
+    background: var(--bg-light) !important;
+    color: var(--fg-light) !important;
+    border-top: 0px !important;
+}
+
+/**** NEW TAB UP LINE (DEFAULT=NONE) ****/
+.tabbrowser-tab *, .tabs-newtab-button * {
+    background: none !important; 
+    list-style-image: none !important;
+    margin: 0 0 0 0 !important; 
+    padding: 0 0 0 0 !important;
+    -moz-appearance: none !important;
+}
+
+/**** TAB SEPARATOR (DEFAULT=NONE)  ****/
+#TabsToolbar .tab-background {
+    background: transparent !important;
+    border-right: 0px !important;
+    border-left: 0px !important;
+}
+
+/**** TAB SEPARATOR (DEFAULT=NONE) ****/
+.tabbrowser-tab::before, .tabbrowser-tab::after {
     display: none !important;
+}
+
+/**** TAB ICONS (DEFAULT=NONE)  ****/
+.tab-icon-image { 
+    display: none !important; 
+}
+
+
+/*********************************/
+/**** URL BAR CONFIG ****/
+/*********************************/
+#urlbar, .searchbar-textbox, urlbar-container {
+    background-color: var(--url-background) !important;
+    color: var(--url-foreground) !important;
+    font-family: var(--url-fonts) !important;
+    font-size: var(--url-font-size); 
+    text-shadow: none !important; 
+    text-align: var(--url-text-align) !important;
+    border: 0px !important;
+    box-shadow: none !important;
+}
+
+#nav-bar[id], #PersonalToolbar[id], #web-developer-toolbar[id], #navigator-toolbox[tabsontop="true"] > #nav-bar[id], #navigator-toolbox[tabsontop="true"]:not([customizing]) > #nav-bar[collapsed="true"][id] + toolbar, #navigator-toolbox[tabsontop="true"]:not([customizing]) > #nav-bar[collapsed="true"] + #customToolbars + #PersonalToolbar[id], #navigator-toolbox[tabsontop="false"] > #nav-bar[id], #navigator-toolbox[tabsontop="false"]:not([customizing]) > #nav-bar[collapsed="true"][id] + toolbar, #navigator-toolbox[tabsontop="false"]:not([customizing]) > #nav-bar[collapsed="true"] + #customToolbars + #PersonalToolbar[id] {
+    background-image: none !important;
+    background: var(--url-background) !important;
+    background-color: var(--url-background) !important;
+    margin-top: 0px !important;
+    border-top: 0px !important;
+    border-bottom: 0px !important;
+}
+
+/**** URL BUTTONS (DEFAULT=NONE) ****/
+#forward-button, #back-button, #PanelUI-menu-button, #PanelUI-button, .restore-tabs-button {
+    display: none !important;
+}
+
+
+/*********************************/
+/**** OTHER CONFIGS ****/
+/*********************************/
+window:not([chromehidden~="toolbar"]) #urlbar-container > .toolbarbutton-1:-moz-any([disabled], :not([open]):not([disabled]):not(:active)) > .toolbarbutton-icon[class], #main-window:not([customizing]) #back-button[disabled] > .toolbarbutton-icon[class] {
+    background-image: none !important;
+    background-color: var(--url-background) !important;
+    box-shadow: 0px !important;
+    border: 0px !important;
+}
+
+browser[type="content-primary"], browser[type="content"] {
+    background: var(--bg-dark) !important;
+}
+
+browser, browser.display.background_color, tabbrowser tabpanels {
+    background-color: var(--bg-dark) !important;
 }
