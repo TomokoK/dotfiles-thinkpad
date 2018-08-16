@@ -1,6 +1,0 @@
-#!/bin/bash
-export WINEPREFIX=~/.LoL64
-export MESA_GL_VERSION_OVERRIDE=4.5COMPAT
-export MESA_GLTHREAD=TRUE
-export VBLANK_MODE=0
-wine "C:/Riot Games/League of Legends/LeagueClient.exe"

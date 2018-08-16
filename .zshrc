@@ -12,7 +12,9 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-export PATH="$PATH:/home/asuka/.bin"
+export PATH="$PATH:/home/asuka/.bin:/home/asuka/.npm-global/bin"
 export MPD_HOST="/home/asuka/.cache/mpd.sock"
 alias wgetdir='wget -r --no-parent --reject "index.html*"'
 alias maim='maim ~/$(date +%s).png'
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -1,0 +1,6 @@
+#!/bin/bash
+
+xrandr --output VGA1 --auto --left-of LVDS1 &&
+feh --bg-scale $HOME/.wallpapers/lain2.png &&
+pkill polybar &&
+$HOME/.config/polybar/launch.sh

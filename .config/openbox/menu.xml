@@ -39,15 +39,10 @@
        <command>firefox</command>
      </action>
   </item>
-  <item label="Eclipse">
+  <item label="Intellij Idea">
      <action name="Execute">
-       <command>eclipse</command>
+       <command>idea-ce-eap</command>
      </action>
-  </item>
-  <item label="PyCharm">
-  	<action name="Execute">
-		<command>pycharm.sh</command>
-	</action>
   </item>
   <item label="Libre Office">
      <action name="Execute">
@@ -58,6 +53,11 @@
 	  <action name="Execute">
 		  <command>steam</command>
 	</action>
+  </item>
+  <item label="Spotify">
+	  <action name="Execute">
+		  <command>spotify</command>
+	  </action>
   </item>
   <separator label="System" />
   <menu id="system-menu"/>

@@ -20,7 +20,7 @@ alert = #ba3d4d
 title = #58698c
 
 [bar/example]
-;monitor = ${env:MONITOR:HDMI-1}
+monitor = ${env:MONITOR:}
 width = 100%
 height = 30
 ;offset-x = 1%
