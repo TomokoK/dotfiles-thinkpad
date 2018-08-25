@@ -9,15 +9,15 @@
       <startupnotify><enabled>yes</enabled></startupnotify>
     </action>
   </item>
-  <item label="lxappearance">
+  <item label="Sleep">
     <action name="Execute">
-      <command>lxappearance</command>
+      <command>sudo zzz</command>
       <startupnotify><enabled>yes</enabled></startupnotify>
     </action>
   </item>
-  <item label="Pavucontrol">
+  <item label="Power Off">
     <action name="Execute">
-      <command>pavucontrol</command>
+      <command>sudo poweroff</command>
       <startupnotify><enabled>yes</enabled></startupnotify>
     </action>
   </item>
@@ -34,9 +34,9 @@
        <command>urxvt</command>
      </action>
   </item>
-  <item label="Firefox">
+  <item label="Chromium">
      <action name="Execute">
-       <command>firefox</command>
+       <command>chromium</command>
      </action>
   </item>
   <item label="Intellij Idea">

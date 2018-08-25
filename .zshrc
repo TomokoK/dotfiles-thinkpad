@@ -16,5 +16,6 @@ export PATH="$PATH:/home/asuka/.bin:/home/asuka/.npm-global/bin"
 export MPD_HOST="/home/asuka/.cache/mpd.sock"
 alias wgetdir='wget -r --no-parent --reject "index.html*"'
 alias maim='maim ~/$(date +%s).png'
+alias neofetch='neofetch --package_managers off --disk_show / /home'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

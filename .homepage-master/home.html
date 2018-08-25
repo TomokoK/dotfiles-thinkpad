@@ -1,60 +1,85 @@
 <!DOCTYPE html>
-<!--    Copyright 2014 gokoururi
-        This work is free. You can redistribute it and/or modify it under the
-        terms of the Do What The Fuck You Want To Public License, Version 2,
-        as published by Sam Hocevar. See the COPYING file for more details. -->
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Uguuu~</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="favicon.png" rel="shortcut icon" type="image/x-icon" />
+</head>
+<body>
+    <div id="search">
+        <input id="search-field" type="text" name="search-field" onkeypress="return search(event)"/>
+    </div>
+    <div class="container">
+        <div id="clock"></div>
+        <div class="weather-container">
+            <div class="row">
+                <div id="weather-description"class="inline"></div>
+                <div class="inline">-</div>
+                <div id="temp" class="inline"></div>
+            </div>
+        </div>
+    </div>
 
-        <link rel="stylesheet" style="text/css" href="general.css" />
+    <script>
+        // Search on enter key event
+        function search(e) {
+            if (e.keyCode == 13) {
+                var val = document.getElementById("search-field").value;
+                window.open("https://google.com/search?q=" + val);
+            }
+        }
+        // Get current time and format
+        function getTime() {
+            let date = new Date(),
+                min = date.getMinutes(),
+                sec = date.getSeconds(),
+                hour = date.getHours();
 
-        <!-- To change theme, replace its name in following 4 lines  -->
-        <link rel="icon"                           href="themes/ruri-dark/favicon.ico" sizes="16x16 32x32 48x48 64x64" type="image/vnd.microsoft.icon" />
-        <link rel="stylesheet" style="text/css"    href="themes/ruri-dark/colors.css" />
-        <script type="text/javascript">var mascotPath = "themes/ruri-dark/images/mascots/";</script>
-        <script type="text/javascript"              src="themes/ruri-dark/mascots.js"></script>
+            return "" + 
+                (hour < 10 ? ("0" + hour) : hour) + ":" + 
+                (min < 10 ? ("0" + min) : min) + ":" + 
+                (sec < 10 ? ("0" + sec) : sec);
+        }
 
-        <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
-        <script type="text/javascript" src="js/mascots-control.js"></script>
-    </head>
-    <body>
-        <main> <!-- Random mascot image will be set as background-image by javascript -->
-            <header>
-                <h1>Have a nice day <span class="name-highlight">ジェームズ!</span></h1>
-                <p class="subtitle">Do your best~</p>
-            </header>
-            </section>
-                </ul>
-                <ul class="columnList">
-                    <li class="column column_purple">
-                        <a>Trackers</a>
-                        <ul>
-                            <li><a href="https://animebytes.tv/">Animebytes</a></li>
-                            <li><a href="https://redacted.ch/index.php">Redacted</a></li>
-		            	    <li><a href="https://jpopsuki.eu/index.php">Jpopsuki</a></li>
-		            	    <li><a href="https://oppaiti.me/index.php">Oppaiti.me</a></li>
-                        </ul>
-                    </li>
-                    <li class="column column_green">
-                        <a>4Chan</a>
-                        <ul>
-                            <li><a href="http://boards.4chan.org/wsg/">Worksafe Gif</a></li>
-                            <li><a href="http://boards.4chan.org/w/">Anime Wallpapers</a></li>
-                            <li><a href="http://boards.4chan.org/g/">Technology</a></li>
-                            <li><a href="http://boards.4chan.org/a/">Anime & Manga</a></li>
-                        </ul>
-                    </li>
-                    <li class="column column_pink">
-                        <a>Others</a>
-                        <ul>
-                            <li><a href="http://mail.google.com">Mail</a></li>
-			    <li><a href="https://github.com/TomokoK">Github</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-        </main>
-    </body>
+        window.onload = () => {
+            let xhr = new XMLHttpRequest();
+            // Request to open weather map
+            xhr.open('GET', 'http://api.openweathermap.org/data/2.5/weather?id=6058560&units=metric&appid=e5b292ae2f9dae5f29e11499c2d82ece');
+            xhr.onload = () => {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                        let json = JSON.parse(xhr.responseText);
+                        console.log(json);
+                        document.getElementById("temp").innerHTML = json.main.temp.toFixed(0) + " C";
+                        document.getElementById("weather-description").innerHTML = json.weather[0].description;
+                    } else {
+                        console.log('error msg: ' + xhr.status);
+                    }
+                }
+            }
+            xhr.send();
+            // Set up the clock
+            document.getElementById("clock").innerHTML = getTime();
+            // Set clock interval to tick clock
+            setInterval( () => {
+                document.getElementById("clock").innerHTML = getTime();
+            },100);
+        }
+
+        document.addEventListener("keydown", event => {
+            if (event.keyCode == 32) {          // Spacebar code to open search
+                document.getElementById('search').style.display = 'flex';
+                document.getElementById('search-field').focus();
+            } else if (event.keyCode == 27) {   // Esc to close search
+                document.getElementById('search-field').value = '';
+                document.getElementById('search-field').blur();
+                document.getElementById('search').style.display = 'none';
+            }
+        });
+    </script>
+</body>
 </html>

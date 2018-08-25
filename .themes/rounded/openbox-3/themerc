@@ -1,8 +1,8 @@
 # Decorator
-window.active.title.bg.color: #58698c
-window.inactive.title.bg.color: #58698c
-window.*.label.text.color: #474c57
-window.*.button.*.image.color: #474c57
+window.active.title.bg.color: #825eaa
+window.inactive.title.bg.color: #151515
+window.*.label.text.color: #000000
+window.*.button.*.image.color: #000000
 
 # Borders
 window.handle.width: 0
@@ -10,8 +10,8 @@ window.client.padding.width: 0
 border.width: 0
 
 # Title
-padding.width: 8
-padding.height: 8
+padding.width: 2
+padding.height: 2
 window.*.title.bg: Solid Flat
 window.*.*.bg: Parentrelative
 window.label.text.justify: center

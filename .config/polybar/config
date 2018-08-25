@@ -45,9 +45,9 @@ padding-right = 3
 module-margin-left = 2
 module-margin-right = 2
 
-font-0 = lucy tewi:pixelsize=9:antialias=false;1
+font-0 = scientifica:pixelsize=11:antialias=false;1
 font-1 = FreeType JackeyFont:size=9:antialias=false;1
-font-2 = Wuncon Siji:pixelsize=10;1
+font-2 = Siji:pixelsize=10;1
 
 modules-left = mpd weather
 modules-center = 
@@ -367,9 +367,7 @@ menu-0-2-exec = systemctl suspend
 
 [module/weather]
 type = custom/script
-interval = 10
-format = <label>
-format-prefix-foreground = ${colors.foreground-alt}
+interval = 600
 exec = ~/.config/polybar/weather
 
 [module/ewmh]
