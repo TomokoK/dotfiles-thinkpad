@@ -9,12 +9,12 @@ URxvt.allowBold: false
 !! Enabling clickable links.
 URxvt.perl-ext-common:  default,matcher
 URxvt.matcher.button:   1
-URxvt.url-launcher:     /usr/bin/firefox
+URxvt.url-launcher:     /usr/bin/google-chrome-stable
 
 !! FONT
-urxvt*font: xft:lucy tewi:pixelsize=9,xft:Freetype JackeyFont:pixelsize=9,-wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1,
+urxvt*font: xft:Dina:pixelsize=14,xft:Freetype JackeyFont:pixelsize=12,-wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1,
 
-urxvt*boldFont: xft:lucy tewi:pixelsize=9,xft:Freetype JackeyFont:pixelsize=9,-wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1,
+urxvt*boldFont: xft:Dina:pixelsize=14,xft:Freetype JackeyFont:pixelsize=12,-wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1,
 
 !! COLORS
 

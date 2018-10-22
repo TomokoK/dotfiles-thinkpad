@@ -9,15 +9,21 @@
       <startupnotify><enabled>yes</enabled></startupnotify>
     </action>
   </item>
+  <item label="Lock">
+    <action name="Execute">
+      <command>i3lock-fancy</command>
+      <startupnotify><enabled>yes</enabled></startupnotify>
+    </action>
+  </item>
   <item label="Sleep">
     <action name="Execute">
-      <command>sudo zzz</command>
+      <command>systemctl suspend</command>
       <startupnotify><enabled>yes</enabled></startupnotify>
     </action>
   </item>
   <item label="Power Off">
     <action name="Execute">
-      <command>sudo poweroff</command>
+      <command>poweroff</command>
       <startupnotify><enabled>yes</enabled></startupnotify>
     </action>
   </item>
@@ -34,14 +40,14 @@
        <command>urxvt</command>
      </action>
   </item>
-  <item label="Chromium">
+  <item label="Chrome">
      <action name="Execute">
-       <command>chromium</command>
+       <command>google-chrome-stable</command>
      </action>
   </item>
-  <item label="Intellij Idea">
+  <item label="PyCharm">
      <action name="Execute">
-       <command>idea-ce-eap</command>
+       <command>pycharm</command>
      </action>
   </item>
   <item label="Libre Office">
