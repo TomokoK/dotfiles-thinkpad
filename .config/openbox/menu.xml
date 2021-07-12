@@ -3,21 +3,21 @@
 <openbox_menu xmlns="http://openbox.org/3.4/menu">
 
 <menu id="system-menu" label="System">
-  <item label="Openbox Configuration Manager">
-    <action name="Execute">
-      <command>obconf</command>
-      <startupnotify><enabled>yes</enabled></startupnotify>
-    </action>
-  </item>
   <item label="Lock">
     <action name="Execute">
       <command>i3lock-fancy</command>
       <startupnotify><enabled>yes</enabled></startupnotify>
     </action>
   </item>
-  <item label="Sleep">
+  <item label="Hibernate">
+	  <action name="Execute">
+		  <command>systemctl hibernate</command>
+		  <startupnotify><enabled>yes</enabled></startupnotify>
+	  </action>
+  </item>
+  <item label="Reboot">
     <action name="Execute">
-      <command>systemctl suspend</command>
+      <command>reboot</command>
       <startupnotify><enabled>yes</enabled></startupnotify>
     </action>
   </item>
@@ -45,7 +45,7 @@
        <command>google-chrome-stable</command>
      </action>
   </item>
-  <item label="PyCharm">
+  <item label="Pycharm">
      <action name="Execute">
        <command>pycharm</command>
      </action>
@@ -63,6 +63,11 @@
   <item label="Spotify">
 	  <action name="Execute">
 		  <command>spotify</command>
+	  </action>
+  </item>
+  <item label="Discord">
+	  <action name="Execute">
+		  <command>discord</command>
 	  </action>
   </item>
   <separator label="System" />

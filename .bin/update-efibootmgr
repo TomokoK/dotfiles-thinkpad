@@ -1,0 +1,16 @@
+#!/bin/bash
+
+read -n 1 -r -s -p $'This will mess with the bootloader. Are you sure you want to proceed? Press enter to continue...\n'
+
+if [[ $EUID > 0 ]]
+	then echo "ERROR: must be run as root"
+	exit
+fi
+
+KERNEL_PARAMS="rw nowatchdog modprobe.blacklist=pcspkr"
+
+efibootmgr -b 0000 -B
+
+sleep 3
+
+efibootmgr --disk /dev/sda --part 1 --create --label "Arch Linux" --loader /vmlinuz-linux --unicode 'root=PARTUUID=51a3da28-b389-9e4b-8b67-4cd147e3bd2d resume=PARTUUID=dd84a133-324d-6a49-ba55-7dbe4615a33e '"$KERNEL_PARAMS"' initrd=\intel-ucode.img initrd=\initramfs-linux.img' --verbose

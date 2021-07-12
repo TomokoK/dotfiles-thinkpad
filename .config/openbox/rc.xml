@@ -43,8 +43,6 @@
   </placement>
   <theme>
     <name>rounded</name>
-    <cornerRadius>4</cornerRadius>
-    <cornerRadius menu="yes">4</cornerRadius>
     <titleLayout>C</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
@@ -56,6 +54,7 @@
       S: shade (roll up/down)
       D: omnipresent (on all desktops).
   -->
+    <cornerRadius menu="yes">8</cornerRadius>
     <keepBorder>yes</keepBorder>
     <animateIconify>yes</animateIconify>
     <font place="ActiveWindow">
@@ -122,12 +121,11 @@
 
        use obconf if you want to change these without having to log out
        and back in -->
-    <number>4</number>
+    <number>3</number>
     <firstdesk>1</firstdesk>
     <names>
-      <name>トモカーズ</name>
+      <name>Main</name>
       <name>Games</name>
-      <name>Misc.</name>
       <name>Misc.</name>
     </names>
     <popupTime>875</popupTime>
@@ -155,7 +153,7 @@
      Many programs reserve space automatically, but you can use this in other
      cases. -->
   <margins>
-    <top>30</top>
+    <top>0</top>
     <bottom>0</bottom>
     <left>0</left>
     <right>0</right>
@@ -193,42 +191,6 @@
         <wrap>no</wrap>
       </action>
     </keybind>
-    <keybind key="W-Up">
-      <action name="GoToDesktop">
-        <to>up</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
-    <keybind key="W-Down">
-      <action name="GoToDesktop">
-        <to>down</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
-    <keybind key="W-S-Left">
-      <action name="SendToDesktop">
-        <to>left</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
-    <keybind key="W-S-Right">
-      <action name="SendToDesktop">
-        <to>right</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
-    <keybind key="W-S-Up">
-      <action name="SendToDesktop">
-        <to>up</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
-    <keybind key="W-S-Down">
-      <action name="SendToDesktop">
-        <to>down</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
     <keybind key="W-1">
       <action name="GoToDesktop">
         <to>1</to>
@@ -244,22 +206,9 @@
         <to>3</to>
       </action>
     </keybind>
-    <keybind key="W-4">
-      <action name="GoToDesktop">
-        <to>4</to>
-      </action>
-    </keybind>
-    <keybind key="W-d">
-      <action name="ToggleShowDesktop"/>
-    </keybind>
     <!-- Keybindings for windows -->
     <keybind key="W-S-c">
       <action name="Close"/>
-    </keybind>
-    <keybind key="A-Escape">
-      <action name="Lower"/>
-      <action name="FocusToBottom"/>
-      <action name="Unfocus"/>
     </keybind>
     <keybind key="A-space">
       <action name="ShowMenu">
@@ -269,26 +218,6 @@
     <!-- Keybindings for window switching -->
     <keybind key="A-Tab">
       <action name="NextWindow">
-        <finalactions>
-          <action name="Focus"/>
-          <action name="Raise"/>
-          <action name="Unshade"/>
-        </finalactions>
-      </action>
-    </keybind>
-    <keybind key="A-S-Tab">
-      <action name="PreviousWindow">
-        <finalactions>
-          <action name="Focus"/>
-          <action name="Raise"/>
-          <action name="Unshade"/>
-        </finalactions>
-      </action>
-    </keybind>
-    <keybind key="C-A-Tab">
-      <action name="NextWindow">
-        <panels>yes</panels>
-        <desktop>yes</desktop>
         <finalactions>
           <action name="Focus"/>
           <action name="Raise"/>
@@ -312,34 +241,44 @@
         <execute>maim -s</execute>
       </action>
     </keybind>
-    <keybind key="">
+    <keybind key="XF86ScreenSaver">
       <action name="Execute">
         <execute>i3lock-fancy</execute>
       </action>
     </keybind>
-    <keybind key="XF86MonBrightnessUp">
+    <keybind key="XF86AudioRaiseVolume">
       <action name="Execute">
-        <execute>xbacklight -inc 10</execute>
+	<execute>sh -c "pactl set-sink-mute 0 false ; pactl set-sink-volume 0 +5%"</execute>
       </action>
     </keybind>
-    <keybind key="XF86MonBrightnessDown">
+    <keybind key="XF86AudioLowerVolume">
       <action name="Execute">
-        <execute>xbacklight -dec 10</execute>
+	<execute>sh -c "pactl set-sink-mute 0 false ; pactl set-sink-volume 0 -5%"</execute>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioMute">
+      <action name="Execute">
+	<execute>pactl set-sink-mute 0 toggle</execute>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioMicMute">
+      <action name="Execute">
+	<execute>pactl set-source-mute 1 toggle</execute>
       </action>
     </keybind>
     <keybind key="XF86AudioNext">
       <action name="Execute">
-        <execute>mpc next</execute>
+        <execute>spotify_control next</execute>
       </action>
     </keybind>
     <keybind key="XF86AudioPrev">
       <action name="Execute">
-        <execute>mpc prev</execute>
+        <execute>spotify_control previous</execute>
       </action>
     </keybind>
-    <keybind key="C-S-x">
+    <keybind key="XF86AudioPlay">
       <action name="Execute">
-        <execute>pkill -f 'x11grab'</execute>
+        <execute>spotify_control playpause</execute>
       </action>
     </keybind>
   </keyboard>
@@ -356,58 +295,8 @@
     <!-- Set this to TRUE to move the mouse pointer across the desktop when
        switching due to hitting the edge of the screen -->
     <context name="Frame">
-      <mousebind button="A-Left" action="Press">
-        <action name="Focus"/>
-        <action name="Raise"/>
-      </mousebind>
-      <mousebind button="A-Left" action="Click">
-        <action name="Unshade"/>
-      </mousebind>
       <mousebind button="A-Left" action="Drag">
         <action name="Move"/>
-      </mousebind>
-      <mousebind button="A-Right" action="Press">
-        <action name="Focus"/>
-        <action name="Raise"/>
-        <action name="Unshade"/>
-      </mousebind>
-      <mousebind button="A-Right" action="Drag">
-        <action name="Resize"/>
-      </mousebind>
-      <mousebind button="A-Middle" action="Press">
-        <action name="Lower"/>
-        <action name="FocusToBottom"/>
-        <action name="Unfocus"/>
-      </mousebind>
-      <mousebind button="A-Up" action="Click">
-        <action name="GoToDesktop">
-          <to>previous</to>
-        </action>
-      </mousebind>
-      <mousebind button="A-Down" action="Click">
-        <action name="GoToDesktop">
-          <to>next</to>
-        </action>
-      </mousebind>
-      <mousebind button="C-A-Up" action="Click">
-        <action name="GoToDesktop">
-          <to>previous</to>
-        </action>
-      </mousebind>
-      <mousebind button="C-A-Down" action="Click">
-        <action name="GoToDesktop">
-          <to>next</to>
-        </action>
-      </mousebind>
-      <mousebind button="A-S-Up" action="Click">
-        <action name="SendToDesktop">
-          <to>previous</to>
-        </action>
-      </mousebind>
-      <mousebind button="A-S-Down" action="Click">
-        <action name="SendToDesktop">
-          <to>next</to>
-        </action>
       </mousebind>
     </context>
     <context name="Titlebar">
@@ -615,21 +504,6 @@
       <mousebind button="A-Up" action="Click">
         <action name="GoToDesktop">
           <to>previous</to>
-        </action>
-      </mousebind>
-      <mousebind button="A-Down" action="Click">
-        <action name="GoToDesktop">
-          <to>next</to>
-        </action>
-      </mousebind>
-      <mousebind button="C-A-Up" action="Click">
-        <action name="GoToDesktop">
-          <to>previous</to>
-        </action>
-      </mousebind>
-      <mousebind button="C-A-Down" action="Click">
-        <action name="GoToDesktop">
-          <to>next</to>
         </action>
       </mousebind>
       <mousebind button="Left" action="Press">

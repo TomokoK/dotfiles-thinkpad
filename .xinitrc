@@ -2,13 +2,8 @@
 #
 #Tomoko's .xinitrc
 
-exec /home/asuka/.screencheck.sh &
-
-xsetroot -cursor_name left_ptr &
-xset +fp /home/asuka/.fonts &
-xset fp rehash &
-#Start programs here
-mpd &
-
-#Start WM
+export GTK_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+export QT_IM_MODULE=ibus
+xrdb /home/asuka/.Xresources
 exec openbox-session

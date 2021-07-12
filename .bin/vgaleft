@@ -1,6 +1,0 @@
-#!/bin/bash
-
-xrandr --output VGA1 --auto --left-of LVDS1 &&
-feh --bg-scale $HOME/.wallpapers/flowers2.jpg &&
-pkill polybar &&
-$HOME/.config/polybar/launch.sh

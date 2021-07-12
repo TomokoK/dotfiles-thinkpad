@@ -1,8 +1,8 @@
-# Created by newuser for 5.2
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
+unsetopt beep
 bindkey -e
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
@@ -12,10 +12,5 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-export PATH="$PATH:/home/asuka/.bin:/home/asuka/.npm-global/bin"
-export MPD_HOST="/home/asuka/.cache/mpd.sock"
-alias wgetdir='wget -r --no-parent --reject "index.html*"'
-alias maim='maim ~/$(date +%s).png'
-alias neofetch='neofetch --package_managers off --disk_show / /home'
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export PATH=/home/asuka/.bin:$PATH
+alias maim='maim -u ~/$(date +%s).png'
